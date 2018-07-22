@@ -9,6 +9,7 @@ class SerpService {
 
     /**
      * @param answers
+     * @param options
      */
     search(answers = {}, options = {}) {
         answers = {...config, ...answers};
@@ -33,11 +34,12 @@ class SerpService {
     /**
      * @param links
      * @param answers
+     * @param options
      */
     match(links, answers, options = {}) {
         let counter = 0;
         if(typeof options.csv === 'undefined'){
-            console.log(`KW: ${answers.kw}`);
+            console.log(`Kw: ${answers.kw}`);
             console.log('-'.repeat(answers.kw.length + 4));
 
             links.forEach((item) => {

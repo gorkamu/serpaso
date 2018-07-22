@@ -12,6 +12,23 @@ $ sudo chmod 775 install.sh
 $ ./install.sh
 ``` 
 
+This bash script will install the following depedencies:
+ - colors: "^1.3.0"
+ - commander: "^2.16.0
+ - inquirer: "^6.0.0"
+ - request: "^2.87.0"
+ - serp: "^2.0.2"
+ - simple-proxies: "^0.1.12"
+ - yarn: "^1.7.0"
+     
+Dev dependencies:
+ - nodemon: "^1.17.5"
+ - chai: "^3.5.0"
+ - mocha: "*"
+ 
+ 
+And it will create the symbolic link to **/usr/local/bin**to can launch the binary globally. 
+
 After that, you can use the program like this
 ``` bash
 $ serpaso
