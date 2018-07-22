@@ -1,18 +1,20 @@
-# WooSerp
+# 🔥 🔥 Serpaso SERP Rank Checker
 
 A node cli program to check serp ranking of your keywords.
+This program is based in [this one](https://github.com/christophebe/serp)
+.
 
 ## How to install it
-You'll need last version of node and NPM first. 
-Then you should execute the install bash script
+You'll need the last version of node and NPM first. 
+Then you can execute the install bash script:
 ``` bash
-$ sudo chmod 775 install.sh
+$ sudo chmod 775 install.sh 
 $ ./install.sh
 ``` 
 
-Then you can use the program like this
+After that, you can use the program like this
 ``` bash
-$ wooserp
+$ serpaso
 ``` 
 
 ## Execution modes
@@ -20,13 +22,22 @@ This program has three distinct modes to be launched:
 
 ### Interactive mode with user
 ``` bash
-$ wooserp
+$ serpaso
+>
+    ? Enter keyword: how to check spam folder
+    ? Enter target: howtocheck.com
+    ? Enter locale [int] en_EN
 ``` 
+![Interactive mode](https://i.imgur.com/8yP4wt7.jpg)
 
 ### CLI based arguments mode
 ``` bash
-$ wooserp --keywords "how to check spam folder" --target howtocheck.com --locale en_EN
+$ serpaso --keywords "how to check spam folder" --target howtocheck.com --locale en_EN
 ``` 
+![Arguments mode](https://i.imgur.com/y3O469H.jpg)
+![Arguments mode CSV output](https://i.imgur.com/94ABzAg.jpg)
+
+
 ### Config file mode
 You can specify the configuration needed to run the program. This configuration is available in conf/config.js
 
@@ -43,4 +54,19 @@ $ cat conf/config.js
   };
 ``` 
 
-The options specified in configuration file will be override by the arguments mode by default 
+The options specified in configuration file will be override by the arguments mode by default
+#### Config file options
+- **kws**: Array with your keywords
+- **target**: Hostname to be found 
+- **locale**: Locale to be used. This option allows you specify the google domain to search in
+- **proxy**: Perform the search behind a proxy
+- **proxyList**: Array with your proxies. Perform the search behind a proxy. For every connection the proxy will rotate.
+- **delay**: Delay miliseconds between connections
+- **retry**: Number of tries to retry if connection fails
+
+## Serpaso options
+When you launch it via argument mode, you can add a --csv flag to get the output in this format.
+The CSV output has the following structure:
+``` bash
+    <keyword>,<target>,<result_title>,<result_url>,<rank_position>
+```

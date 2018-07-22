@@ -2,9 +2,8 @@
 
 const serp = require('serp');
 const colors = require('colors');
-const WooParser = require('../lib/parser');
+const Parser = require('../lib/parser');
 const config = require('../conf/config');
-const dale = require('../dale');
 
 class SerpService {
 
@@ -24,12 +23,9 @@ class SerpService {
         answers.kws.forEach((kw) => {
             if(typeof kw !== 'undefined') {
                 answers.kw = kw;
-
-                this.match(dale, answers, options)
-
-                /*serp.search(new WooParser().getOptions(answers))
+                serp.search(new Parser().getOptions(answers))
                     .then(links => this.match(links, answers, options))
-                    .catch(error => console.log(error));*/
+                    .catch(error => console.log(error));
             }
         });
     }
@@ -54,7 +50,7 @@ class SerpService {
             links.forEach((item) => {
                 counter++;
                 if(item.url.includes(answers.target)) {
-                    console.log(`${answers.kw},${answers.target},${item.url},${counter}`);
+                    console.log(`${answers.kw},${answers.target},${item.title},${item.url},${counter}`);
                 }
             });
         }

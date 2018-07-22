@@ -1,16 +1,21 @@
 {
-  "name": "wooserp",
+  "name": "serpaso",
   "version": "1.0.0",
-  "description": "",
+  "description": "A node cli program to check serp ranking of your keywords",
+  "keywords": "serp,google,serp ranker,cli, serp checker, command line interface,serpaso",
   "preferGlobal": true,
-  "bin": "./cli.js",
+  "bin": "./serpaso.js",
   "scripts": {
-    "start": "nodemon cli.js"
+    "start": "node serpaso.js",
+    "test": "mocha test/test.js"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "chai": "^3.5.0",
+    "mocha": "*"
   },
-  "author": "",
+  "author": "Gorka Muñoz",
+  "homepage": "http://gorkamu.com",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.3.0",
@@ -18,6 +23,7 @@
     "inquirer": "^6.0.0",
     "request": "^2.87.0",
     "serp": "^2.0.2",
+    "simple-proxies": "^0.1.12",
     "yarn": "^1.7.0"
   }
 }

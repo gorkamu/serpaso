@@ -1,4 +1,4 @@
 module.exports = {
-    delay: 200,
+    delay: 4000,
     retry: 3
 };
